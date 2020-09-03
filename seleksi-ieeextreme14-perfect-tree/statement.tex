@@ -37,63 +37,75 @@
 \begin{document}
 
 \begin{center}
-    \section*{Judul Problem} % ganti judul soal
+    \section*{K - Perfect Tree} % ganti judul soal
 
     \begin{tabular}{ | c c | }
         \hline
         Batas Waktu  & 1s \\    % jangan lupa ganti time limit
-        Batas Memori & 512MB \\  % jangan lupa ganti memory limit
+        Batas Memori & 256MB \\  % jangan lupa ganti memory limit
         \hline
     \end{tabular}
 \end{center}
 
 \subsection*{Deskripsi}
 
-Contoh memformat teks: \textbf{bold}, \textit{italic}, \underline{underline}, $x$.
+Rooted tree adalah struktur data tree yang memiliki akar. Semua node pada rooted tree memiliki sebuah parent kecuali pada node yang menjadi akarnya.
 
-Contoh membuat persamaan:
+Pada soal ini, diberikan sebuah rooted tree yang memiliki node 1 sebagai akar. Rooted tree ini memiliki $N$ buah node bernomor $1$ sampai $N$ dimana untuk setiap node $2$ sampai $N$ akan memiliki sebuah node parent $P_i$. 
 
-\[ x_{n+1} = x_{n} - \frac{f(x_{n})}{f'(x_{n})} \]
+Selain itu, setiap node juga memiliki nilai $V_i$.
 
-\begin{enumerate}
-    \setlength\itemsep{0pt}
-    \item Contoh penomoran.
-    \item Contoh penomoran.
-\end{enumerate}
+Sebuah perfect tree didefinisikan sebagai tree yang jarak pada setiap pasang nodenya sama dengan selisih nilai yang ada pada mereka.
 
-\begin{itemize}
-    \setlength\itemsep{0pt}
-    \item Contoh membuat poin-poin.
-    \item Contoh membuat poin-poin.
-\end{itemize}
+Untuk setiap subtree, carilah berapa banyak nilai node minimum yang harus diubah agar subtree tersebut termasuk kedalam perfect tree atau nyatakan jika tidak mungkin.
 
-\begin{center}
-    Teks rata tengah
-    % Contoh gambar:
-    % \includegraphics[width=300px]{image-1}
-\end{center}
 
 \subsection*{Format Masukan}
 
-Baris pertama terdiri dari satu bilangan bulat positif $T$ ($1 \leq T \leq 100.000$), menyatakan banyaknya kasus uji.
-Tiap kasus uji diawali dengan bilangan $N$ ($1 \leq N \leq 100.000$).
-$N$ baris berikutnya terdiri dari 3 bilangan, dengan baris ke-$i$ menyatakan bilangan $A_i$, $B_i$, dan $C_i$.
+Baris pertama berisi bilangan bulat $Q$ ($1 \leq N \leq 10$) yaitu banyaknya kasus uji.
+
+Kemudian untuk setiap kasus uji:
+
+\begin{itemize}
+    \item Baris pertama terdiri dari satu bilangan bulat $N$ ($1 \leq N \leq 10^5$) yang menyatakan banyak node pada tree.
+    \item Baris kedua terdiri dari N bilangan bulat $V_i$ ($1 \leq V_1 \leq 10^5$) yang menyatakan nilai pada node-$i$.
+    \item Baris ketiga sampai $N + 1$ berisi satu bilangan bulat $P_i$ ($1 \leq P_i \leq N$) yang menyatakan parent dari node-$i$ ($2 \leq i \leq N$).
+\end{itemize}
 
 \subsection*{Format Keluaran}
 
-Untuk tiap kasus uji, tuliskan $N$ baris, dengan baris ke-$i$ menyatakn jumlah $A_i + B_i + C_i$.
+Untuk setiap kasus uji:
+
+Pada baris pertama keluarkan "Case #i:" yang menandakan jawaban untuk kasus uji ke-$i$. 
+
+Kemudian, keluarkan $N$ buah baris yang berisi jawaban untuk masing-masing subtree node-$i$. Baris ke-$i$ merupakan jawaban untuk subtree node-$i$ yang berisi satu bilangan bulat $X_i$, yaitu banyak node minimum yang harus diubah nilainya agar subtree menjadi perfect tree. Jika tidak mungkin menjadi perfect tree maka keluarkan -1.
 \\
 
 \begin{multicols}{2}
 \subsection*{Contoh Masukan}
 \begin{lstlisting}
+2
 3
-1 2 3
+3 3 2
+1
+1
+3
+3 1 50
+1
+1
+
 \end{lstlisting}
 \columnbreak
 \subsection*{Contoh Keluaran}
 \begin{lstlisting}
--6
+Case #1:
+1
+0
+0
+Case #2:
+2
+0
+0
 \end{lstlisting}
 \vfill
 \null

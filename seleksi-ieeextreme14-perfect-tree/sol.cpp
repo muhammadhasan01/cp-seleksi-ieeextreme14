@@ -137,11 +137,12 @@ void solve(){
     for (int i=1;i<=n;i++){
         cin >> ar[i];
     }
-    for (int i=1;i<n;i++){
-        int a, b;
-        cin >> a >> b;
-        adj[a].pb(b);
-        adj[b].pb(a);
+    for (int i=2;i<=n;i++){
+        int pp;
+        cin >> pp;
+
+        adj[i].pb(pp);
+        adj[pp].pb(i);
     }
     bool dummy = 1;
     dfs_bisa(1, 1, dummy);
@@ -212,9 +213,8 @@ void solve(){
     }
     ada.clear();
     for (int i=1;i<=n;i++){
-        cout << ans[i] << " ";
+        cout << ans[i] << el;
     }
-    cout << el;
 }
 
 int main () {
@@ -223,7 +223,8 @@ int main () {
     cout.tie(0);
 
     cin >> q;
-    while (q--){
+    for (int i=1;i<=q;i++){
+        cout << "Case #" << i << ":\n";
         solve();
     }
 
