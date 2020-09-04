@@ -1,6 +1,6 @@
  /**
   * Author  : Morgen Sudyanto
-  * Problem : ?
+  * Problem : Menghitung Buku
   */
 
 // problem source: https://codeforces.com/contest/1352/problem/C
