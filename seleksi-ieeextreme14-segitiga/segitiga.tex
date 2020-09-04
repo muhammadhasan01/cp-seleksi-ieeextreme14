@@ -37,11 +37,11 @@
 \begin{document}
 
 \begin{center}
-    \section*{Menghitung Perkalian Faktor-Faktor}
+    \section*{Membuat Segitiga}
 
     \begin{tabular}{ | c c | }
         \hline
-        Batas Waktu  & 2s \\    % jangan lupa ganti time limit
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
         Batas Memori & 256MB \\  % jangan lupa ganti memory limit
         \hline
     \end{tabular}
@@ -49,58 +49,52 @@
 
 \subsection*{Deskripsi}
 
-Contoh memformat teks: \textbf{bold}, \textit{italic}, \underline{underline}, $x$.
-
-Contoh membuat persamaan:
-
-\[ x_{n+1} = x_{n} - \frac{f(x_{n})}{f'(x_{n})} \]
-
-\begin{enumerate}
-    \setlength\itemsep{0pt}
-    \item Contoh penomoran.
-    \item Contoh penomoran.
-\end{enumerate}
-
-\begin{itemize}
-    \setlength\itemsep{0pt}
-    \item Contoh membuat poin-poin.
-    \item Contoh membuat poin-poin.
-\end{itemize}
-
-\begin{center}
-    Teks rata tengah
-    % Contoh gambar:
-    % \includegraphics[width=300px]{image-1}
-\end{center}
+Fang sedang berjalan - jalan di hutan. Dia melihat ada banyak kayu yang jatuh dengan panjang yang beragam. Ada $n$ buah kayu dengan panjang masing-masing $a[1], a[2], a[3], \dots, a[n]$. Berapa banyak cara dia bisa memilih 3 buah kayu dan membuat segitiga dengan kayu - kayu tersebut? Dua buah cara dianggap berbeda jika terdapat setidaknya satu kayu yang memiliki indeks berbeda diantara kedua cara tersebut. Untuk lebih jelasnya, lihat bagian penjelasan.
 
 \subsection*{Format Masukan}
 
-Baris pertama terdiri dari satu bilangan bulat positif $N$ ($1 \leq N \leq 200.000$), menyatakan banyaknya faktor prima dari bilangan $X$.
-Baris berikutnya berisi $N$ buah bilangan $p_1$, $p_2$, $\dots$, $p_N$ ($1 \leq p_i \leq 200.000$) yang merupakan faktor-faktor prima dari $X$. Dijamin tiap $p_i$ merupakan bilangan prima.
-$N$ baris berikutnya terdiri dari 3 bilangan, dengan baris ke-$i$ menyatakan bilangan $A_i$, $B_i$, dan $C_i$.
+Baris pertama terdiri dari satu bilangan bulat positif $n$ ($1 \leq n \leq 500$), menyatakan banyaknya kayu.
+Baris berikutnya berisi $n$ buah bilangan $a[1], a[2], a[3], \dots, a[n]$ ($1 \leq a[i] \leq 2.10^9$ untuk setiap $i$), menyatakan panjang kayu.
 
 \subsection*{Format Keluaran}
 
-Tuliskan sebuah bilangan yang merupakan bilangan yang diinginkan dalam modulo $10^9 + 7$.
+Keluarkan 1 buah baris yang berisi banyaknya segitiga yang bisa dibuat.
 \\
 
 \begin{multicols}{2}
-\subsection*{Contoh Masukan}
+\subsection*{Contoh Masukan 1}
 \begin{lstlisting}
-3
-5 2 2
+5
+1 3 5 7 9
 \end{lstlisting}
 \columnbreak
-\subsection*{Contoh Keluaran}
+\subsection*{Contoh Keluaran 1}
 \begin{lstlisting}
--6
+3
 \end{lstlisting}
 \vfill
 \null
 \end{multicols}
 
-% \subsection*{Penjelasan}
-% Jika dibutuhkan, tambahkan penjelasan di sini
+\begin{multicols}{2}
+\subsection*{Contoh Masukan 2}
+\begin{lstlisting}
+4
+2 2 2 2
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran 2}
+\begin{lstlisting}
+4
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\subsection*{Penjelasan}
+Untuk kasus pertama, Fang dapat memilih kayu dengan panjang (3,5,7), (3,7,9), dan (5,7,9).
+
+Untuk kasus kedua, semua triplet kayu dapat dipilih.
 
 \pagebreak
 

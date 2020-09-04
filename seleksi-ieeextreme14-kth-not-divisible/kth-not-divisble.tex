@@ -37,11 +37,11 @@
 \begin{document}
 
 \begin{center}
-    \section*{Menghitung Perkalian Faktor-Faktor}
+    \section*{Menghitung Buku}
 
     \begin{tabular}{ | c c | }
         \hline
-        Batas Waktu  & 2s \\    % jangan lupa ganti time limit
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
         Batas Memori & 256MB \\  % jangan lupa ganti memory limit
         \hline
     \end{tabular}
@@ -49,58 +49,47 @@
 
 \subsection*{Deskripsi}
 
-Contoh memformat teks: \textbf{bold}, \textit{italic}, \underline{underline}, $x$.
+Hasan adalah seorang mahasiswa ITB yang sangat rajin. Dia memiliki buku yang bernomor $1, 2, 3, \dots$ sampai tak terhingga. Kamal, temannya Hasan, mengambil semua buku - buku yang memiliki nomor berkelipatan $n$. Sekarang Hasan penasaran, ia ingin menghitung apa nomor yang ada di buku pada urutan ke $k$.
 
-Contoh membuat persamaan:
-
-\[ x_{n+1} = x_{n} - \frac{f(x_{n})}{f'(x_{n})} \]
-
-\begin{enumerate}
-    \setlength\itemsep{0pt}
-    \item Contoh penomoran.
-    \item Contoh penomoran.
-\end{enumerate}
-
-\begin{itemize}
-    \setlength\itemsep{0pt}
-    \item Contoh membuat poin-poin.
-    \item Contoh membuat poin-poin.
-\end{itemize}
-
-\begin{center}
-    Teks rata tengah
-    % Contoh gambar:
-    % \includegraphics[width=300px]{image-1}
-\end{center}
+Misalnya, jika $n$ bernilai $4$ dan $k$ bernilai $7$, maka barisannya adalah $1, 2, 3, 5, 6, 7, 9, 10, 11, \dots$ dan buku yang berada pada urutan ke $7$ adalah buku bernomor $9$.
 
 \subsection*{Format Masukan}
 
-Baris pertama terdiri dari satu bilangan bulat positif $N$ ($1 \leq N \leq 200.000$), menyatakan banyaknya faktor prima dari bilangan $X$.
-Baris berikutnya berisi $N$ buah bilangan $p_1$, $p_2$, $\dots$, $p_N$ ($1 \leq p_i \leq 200.000$) yang merupakan faktor-faktor prima dari $X$. Dijamin tiap $p_i$ merupakan bilangan prima.
-$N$ baris berikutnya terdiri dari 3 bilangan, dengan baris ke-$i$ menyatakan bilangan $A_i$, $B_i$, dan $C_i$.
+Baris pertama terdiri dari satu bilangan bulat positif $T$ ($1 \leq T \leq 1000$), menyatakan banyaknya kasus uji.
+$T$ Baris berikutnya berisi $2$ buah bilangan $n$ ($2 \leq n \leq 10^9$) dan $k$, ($2 \leq k \leq 10^9$).
 
 \subsection*{Format Keluaran}
 
-Tuliskan sebuah bilangan yang merupakan bilangan yang diinginkan dalam modulo $10^9 + 7$.
+Keluarkan $T$ buah baris yang berisi jawaban untuk setiap kasus uji.
 \\
 
 \begin{multicols}{2}
 \subsection*{Contoh Masukan}
 \begin{lstlisting}
-3
-5 2 2
+5
+7 4
+4 7
+2 100
+5 12
+500000000 1000000000
 \end{lstlisting}
 \columnbreak
 \subsection*{Contoh Keluaran}
 \begin{lstlisting}
--6
+4
+9
+199
+14
+1000000002
 \end{lstlisting}
 \vfill
 \null
 \end{multicols}
 
-% \subsection*{Penjelasan}
-% Jika dibutuhkan, tambahkan penjelasan di sini
+\subsection*{Penjelasan}
+Untuk kasus pertama, barisannya adalah $1, 2, 3, 4, 5, 6, 8, 9, \dots$. Dapat dilihat bahwa buku ke-$4$ adalah buku bernomor $4$.
+
+Kasus kedua telah dijelaskan di deskripsi soal.
 
 \pagebreak
 
