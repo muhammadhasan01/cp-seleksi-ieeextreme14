@@ -37,47 +37,26 @@
 \begin{document}
 
 \begin{center}
-    \section*{Menghitung Perkalian Faktor-Faktor}
+    \section*{Tuan Mor Menebak Bilangan}
 
     \begin{tabular}{ | c c | }
         \hline
-        Batas Waktu  & 2s \\    % jangan lupa ganti time limit
-        Batas Memori & 256MB \\  % jangan lupa ganti memory limit
+        Batas Waktu  & 2s \\ 
+        Batas Memori & 256MB \\ 
         \hline
     \end{tabular}
 \end{center}
 
 \subsection*{Deskripsi}
 
-Contoh memformat teks: \textbf{bold}, \textit{italic}, \underline{underline}, $x$.
+Tuan Mor sedang bermain tebak bilangan. Pada setiap ronde ia diberikan sebuah bilangan bulat positif $X$, dan akan menebak suatu bilangan yang merupakan nilai dari $f(X)$ untuk suatu fungsi $f$. Ia tidak diberitahu definisi dari fungsi $f$ tersebut. Karena nilai $X$ bisa bernilai sangat besar, pada tiap ronde ia hanya diberikan faktor-faktor prima dari $X$. 
 
-Contoh membuat persamaan:
-
-\[ x_{n+1} = x_{n} - \frac{f(x_{n})}{f'(x_{n})} \]
-
-\begin{enumerate}
-    \setlength\itemsep{0pt}
-    \item Contoh penomoran.
-    \item Contoh penomoran.
-\end{enumerate}
-
-\begin{itemize}
-    \setlength\itemsep{0pt}
-    \item Contoh membuat poin-poin.
-    \item Contoh membuat poin-poin.
-\end{itemize}
-
-\begin{center}
-    Teks rata tengah
-    % Contoh gambar:
-    % \includegraphics[width=300px]{image-1}
-\end{center}
+Setelah beberapa ronde, ia akhirnya dapat menemukan pola dari fungsi $f$ tersebut, dan menebak bahwa $f(X)$ merupakan perkalian dari seluruh faktor positif dari $X$. Untuk mengecek kebenaran dari tebakannya ini, ia memutuskan untuk menggunakan fungsi ini sebagai fungsi $f$ untuk menebak angka pada ronde berikutnya. Ia meminta anda ikut menghitung untuk meng-\textit{cross-check} jawabannya. Bantulah Tuan Mor untuk menghitung nilai dari bilangan yang akan menjadi tebakannya pada ronde berikutnya.
 
 \subsection*{Format Masukan}
 
-Baris pertama terdiri dari satu bilangan bulat positif $N$ ($1 \leq N \leq 200.000$), menyatakan banyaknya faktor prima dari bilangan $X$.
-Baris berikutnya berisi $N$ buah bilangan $p_1$, $p_2$, $\dots$, $p_N$ ($1 \leq p_i \leq 200.000$) yang merupakan faktor-faktor prima dari $X$. Dijamin tiap $p_i$ merupakan bilangan prima.
-$N$ baris berikutnya terdiri dari 3 bilangan, dengan baris ke-$i$ menyatakan bilangan $A_i$, $B_i$, dan $C_i$.
+Baris pertama terdiri dari satu bilangan bulat positif $N$ ($1 \leq N \leq 200.000$) yang menyatakan banyaknya faktor prima dari bilangan yang diberikan pada ronde berikutnya.
+Baris berikutnya berisi $N$ buah bilangan $p_1$, $p_2$, $\dots$, $p_N$ ($1 \leq p_i \leq 200.000$) yang merupakan faktor-faktor prima dari bilangan yang diberikan tersebut. Dijamin tiap $p_i$ merupakan bilangan prima.
 
 \subsection*{Format Keluaran}
 
@@ -93,14 +72,14 @@ Tuliskan sebuah bilangan yang merupakan bilangan yang diinginkan dalam modulo $1
 \columnbreak
 \subsection*{Contoh Keluaran}
 \begin{lstlisting}
--6
+8000
 \end{lstlisting}
 \vfill
 \null
 \end{multicols}
 
-% \subsection*{Penjelasan}
-% Jika dibutuhkan, tambahkan penjelasan di sini
+\subsection*{Penjelasan}
+Seluruh faktor positif dari $X = 5 \times 2 \times 2 = 20$ adalah $\{ 1,2,4,5,10,20 \}$. Perkalian mereka semua adalah $8000$.
 
 \pagebreak
 
