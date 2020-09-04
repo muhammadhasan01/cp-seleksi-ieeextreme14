@@ -1,0 +1,101 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
+\geometry{ a4paper, total={170mm,257mm}, top=20mm, right=20mm, bottom=20mm, left=20mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{ITB - IEEEXtreme 14.0 Selection}
+\fancyfoot[CE,CO]{\thepage}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=2,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    prebreak={},
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    captionpos=t,
+    escapeinside={(\%}{\%)}
+}
+
+\begin{document}
+
+\begin{center}
+    \section*{Membuat Segitiga}
+
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
+        Batas Memori & 256MB \\  % jangan lupa ganti memory limit
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+
+Fang sedang berjalan - jalan di hutan. Dia melihat ada banyak kayu yang jatuh dengan panjang yang beragam. Ada $n$ buah kayu dengan panjang masing-masing $a[1], a[2], a[3], \dots, a[n]$. Berapa banyak cara dia bisa memilih 3 buah kayu dan membuat segitiga dengan kayu - kayu tersebut? Dua buah cara dianggap berbeda jika terdapat setidaknya satu kayu yang memiliki indeks berbeda diantara kedua cara tersebut. Untuk lebih jelasnya, lihat bagian penjelasan.
+
+\subsection*{Format Masukan}
+
+Baris pertama terdiri dari satu bilangan bulat positif $n$ ($1 \leq n \leq 500$), menyatakan banyaknya kayu.
+Baris berikutnya berisi $n$ buah bilangan $a[1], a[2], a[3], \dots, a[n]$ ($1 \leq a[i] \leq 2.10^9$ untuk setiap $i$), menyatakan panjang kayu.
+
+\subsection*{Format Keluaran}
+
+Keluarkan 1 buah baris yang berisi banyaknya segitiga yang bisa dibuat.
+\\
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan 1}
+\begin{lstlisting}
+5
+1 3 5 7 9
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran 1}
+\begin{lstlisting}
+3
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan 2}
+\begin{lstlisting}
+4
+2 2 2 2
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran 2}
+\begin{lstlisting}
+4
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\subsection*{Penjelasan}
+Untuk kasus pertama, Fang dapat memilih kayu dengan panjang (3,5,7), (3,7,9), dan (5,7,9).
+
+Untuk kasus kedua, semua triplet kayu dapat dipilih.
+
+\pagebreak
+
+\end{document}
