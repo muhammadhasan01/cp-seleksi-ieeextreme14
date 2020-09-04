@@ -1,0 +1,92 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
+\geometry{ a4paper, total={170mm,257mm}, top=20mm, right=20mm, bottom=20mm, left=20mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{ITB - IEEEXtreme 14.0 Selection}
+\fancyfoot[CE,CO]{\thepage}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=2,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    prebreak={},
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    captionpos=t,
+    escapeinside={(\%}{\%)}
+}
+
+\begin{document}
+
+\begin{center}
+    \section*{B. Harta Karun} % ganti judul soal
+
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
+        Batas Memori & 256MB \\  % jangan lupa ganti memory limit
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+
+Faddila berhasil menemukan tempat harta karun di gua tersembunyi, sayangnya gua ini memiliki \textit{trap} yang membuat beberapa harta karun hangus tertelan bumi jika tidak cepat diambil. Faddila mempunyai kekuatan untuk mengestimasi nilai $W_i$, yakni waktu yang dibutuhkan untuk mengambil harta karun ke-$i$ dalam satuan detik. Selain itu, Faddila juga dapat mengestimasi nilai $H_i$, yakni waktu dalam detik saat harta karun ke-$i$ akan hangus dan tidak bisa lagi diambil. Beberapa harta karun lebih berharga dari harta karun yang lain, Faddila bisa juga mengestimasi nilai $V_i$, yakni nilai harga suatu harta karun.
+
+Carilah harga total maksimum yang bisa didapatkan Faddila dengan mengambil beberapa harta karun secara berurutan! 
+
+Sebagai contoh, jika Faddila mengambil harta karun ke-$i$ lalu harta karun ke-$j$, maka harta karun ke-$i$ akan diambil dalam waktu $W_i$ detik dan harta karun ke-$j$ akan diambil dalam waktu $W_i + W_j$ detik.
+
+\subsection*{Format Masukan}
+
+Baris pertama berisi satu bilangan bulat positif, $N$ ($1 \leq N \leq 100$) — banyaknya harta karun yang ada di gua.
+
+$N$ baris berikutnya berisi tiga bilangan bulat positif, dengan baris ke-$i$ berisi $W_i, H_i, V_i$, menyatakan waktu yang dibutuhkan untuk mengambil harta karun ke-$i$, waktu saat harta karun ke-$i$ hangus, dan nilai harga harta karun ke-$i$. ($1 \leq W_i \leq 20, 1 \leq H_i \leq 2000, 1 \leq V_i \leq 10^5$).
+
+\subsection*{Format Keluaran}
+
+Keluarkan satu baris berisi satu bilangan bulat positif, menyatakan harga total maksimum harta karun yang dapat diambil.
+\\
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan}
+\begin{lstlisting}
+3
+3 7 4
+2 6 5
+3 4 6
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran}
+\begin{lstlisting}
+11
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\subsection*{Penjelasan}
+% Jika dibutuhkan, tambahkan penjelasan di sini
+Pengambilan optimal yang dapat dilakukan Faddila adalah mengambil harta karun ke-3 dalam waktu 3 detik ($3 \leq H_3$), lalu kemudian mengambil harta karun ke-2 dalam waktu 2 detik ($3 + 2 \leq H_2$). Sehingga harga total maksimum yang didapatkan adalah $V_3 + V_2 = 6 + 5 = 11$.
+
+\pagebreak
+
+\end{document}
