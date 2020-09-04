@@ -1,0 +1,119 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
+\geometry{ a4paper, total={170mm,257mm}, top=20mm, right=20mm, bottom=20mm, left=20mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{ITB - IEEEXtreme 14.0 Selection}
+\fancyfoot[CE,CO]{\thepage}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=2,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    prebreak={},
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    captionpos=t,
+    escapeinside={(\%}{\%)}
+}
+
+\begin{document}
+
+\begin{center}
+    \section*{K - Perfect Tree} % ganti judul soal
+
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
+        Batas Memori & 256MB \\  % jangan lupa ganti memory limit
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+
+Rooted tree adalah struktur data tree yang memiliki akar. Semua node pada rooted tree memiliki sebuah parent kecuali pada node yang menjadi akarnya.
+
+Pada soal ini, diberikan sebuah rooted tree yang memiliki node 1 sebagai akar. Rooted tree ini memiliki $N$ buah node bernomor $1$ sampai $N$ dimana untuk setiap node $2$ sampai $N$ akan memiliki sebuah node parent $P_i$. 
+
+Selain itu, setiap node juga memiliki nilai $V_i$.
+
+Sebuah perfect tree didefinisikan sebagai tree yang jarak pada setiap pasang nodenya sama dengan selisih nilai yang ada pada mereka.
+
+Untuk setiap subtree, carilah berapa banyak nilai node minimum yang harus diubah agar subtree tersebut termasuk kedalam perfect tree atau nyatakan jika tidak mungkin.
+
+
+\subsection*{Format Masukan}
+
+Baris pertama berisi bilangan bulat $Q$ ($1 \leq N \leq 10$) yaitu banyaknya kasus uji.
+
+Kemudian untuk setiap kasus uji:
+
+\begin{itemize}
+    \item Baris pertama terdiri dari satu bilangan bulat $N$ ($1 \leq N \leq 10^5$) yang menyatakan banyak node pada tree.
+    \item Baris kedua terdiri dari N bilangan bulat $V_i$ ($1 \leq V_1 \leq 10^5$) yang menyatakan nilai pada node-$i$.
+    \item Baris ketiga sampai $N + 1$ berisi satu bilangan bulat $P_i$ ($1 \leq P_i \leq N$) yang menyatakan parent dari node-$i$ ($2 \leq i \leq N$).
+\end{itemize}
+
+\subsection*{Format Keluaran}
+
+Untuk setiap kasus uji:
+
+Pada baris pertama keluarkan "Case #i:" yang menandakan jawaban untuk kasus uji ke-$i$. 
+
+Kemudian, keluarkan $N$ buah baris yang berisi jawaban untuk masing-masing subtree node-$i$. Baris ke-$i$ merupakan jawaban untuk subtree node-$i$ yang berisi satu bilangan bulat $X_i$, yaitu banyak node minimum yang harus diubah nilainya agar subtree menjadi perfect tree. Jika tidak mungkin menjadi perfect tree maka keluarkan -1.
+\\
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan}
+\begin{lstlisting}
+2
+3
+3 3 2
+1
+1
+3
+3 1 50
+1
+1
+
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran}
+\begin{lstlisting}
+Case #1:
+1
+0
+0
+Case #2:
+2
+0
+0
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+% \subsection*{Penjelasan}
+% Jika dibutuhkan, tambahkan penjelasan di sini
+
+\pagebreak
+
+\end{document}
