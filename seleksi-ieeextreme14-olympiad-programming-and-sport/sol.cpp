@@ -103,11 +103,8 @@ int main() {
 
     cin >> n >> p >> s;
     for (int i = 1; i <= n; i++) {
-        cin >> person[i].a;
+        cin >> person[i].a >> person[i].b;
         person[i].idx = i;
-    }
-    for (int i = 1; i <= n; i++) {
-        cin >> person[i].b;
     }
     if (p == 0) solveOne();
     if (s == 0) solveTwo();
