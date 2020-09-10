@@ -21,7 +21,7 @@ using namespace std;
 using ll = long long;
 using pii = pair<int, int>;
 
-const int N = 1e5 + 10, M = 1e4 + 10;
+const int N = 1e5 + 10, M = 1e5 + 10;
 const int INF = 1e9;
 
 int n, m;
