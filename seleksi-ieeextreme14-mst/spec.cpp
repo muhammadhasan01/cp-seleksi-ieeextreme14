@@ -5,7 +5,7 @@ using namespace std;
 using namespace tcframe;
 
 const int NMax = 1e5;
-const int MMax = 1e5;
+const int MMax = 2e5;
 const int WMax = 1e9;
 
 class ProblemSpec : public BaseProblemSpec {
@@ -26,12 +26,12 @@ protected:
     }
 
     void GradingConfig() {
-        TimeLimit(3);
-        MemoryLimit(512);
+        TimeLimit(5);
+        MemoryLimit(256);
     }
 
     void Constraints() {
-        CONS(1 <= N && N <= NMax);
+        CONS(2 <= N && N <= NMax);
         CONS(1 <= M && M <= MMax);
         CONS(eachElementBetween(U, 1, N));
         CONS(eachElementBetween(V, 1, N));
@@ -108,7 +108,7 @@ protected:
     		CASE(N = NMax, M = MMax, randomConnectedGraph(N, M, U, V, W, rnd.nextInt(1000, 10000)));
     	}
         for (int i = 0; i < 1; i++){
-    	    CASE(N = 400, M = min(maxx(N), MMax), randomConnectedGraph(N, M, U, V, W));
+    	    CASE(N = 1000, M = min(maxx(N), MMax), randomConnectedGraph(N, M, U, V, W));
     	    CASE(N = 400, M = min(maxx(N), MMax), randomConnectedGraph(N, M, U, V, W, rnd.nextInt(1000, 10000)));
         }
     }
