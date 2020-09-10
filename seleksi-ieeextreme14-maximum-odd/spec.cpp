@@ -46,8 +46,14 @@ class TestSpec: public BaseTestSpec<ProblemSpec> {
         vector<int> randomArray(int N) {
             vector<int> res;
             
+            int sum = 0;
             for (int i = 0; i < N; ++i) {
-                res.push_back(rnd.nextInt(-MAXB, MAXB));
+                int bil = rnd.nextInt(-MAXB, MAXB);
+                sum += abs(bil) % 2;
+                if (i == N-1 && sum % 2 == 0) {
+                    bil--;
+                } 
+                res.push_back(bil);
             }
 
             return res;
