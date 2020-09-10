@@ -21,7 +21,7 @@ using namespace std;
 using ll = long long;
 using pii = pair<int, int>;
 
-const int N = 1e5 + 10;
+const int N = 2e5 + 10;
 const int INF = 1e9 + 10;
 
 int q;
@@ -137,12 +137,12 @@ void solve(){
     for (int i=1;i<=n;i++){
         cin >> ar[i];
     }
-    for (int i=2;i<=n;i++){
-        int pp;
-        cin >> pp;
+    for (int i=1;i<n;i++){
+        int a, b;
+        cin >> a >> b;
 
-        adj[i].pb(pp);
-        adj[pp].pb(i);
+        adj[a].pb(b);
+        adj[b].pb(a);
     }
     bool dummy = 1;
     dfs_bisa(1, 1, dummy);
@@ -222,9 +222,8 @@ int main () {
     cin.tie(0);
     cout.tie(0);
 
-    cin >> q;
+    q = 1;
     for (int i=1;i<=q;i++){
-        cout << "Case #" << i << ":\n";
         solve();
     }
 
