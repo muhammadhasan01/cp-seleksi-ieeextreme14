@@ -21,7 +21,7 @@ using namespace std;
 using ll = long long;
 using pii = pair<int, int>;
 
-const int N = 3e5 + 10;
+const int N = 2e5 + 10;
 const int INF = 1e9 + 10;
 
 int q;
@@ -89,7 +89,7 @@ void getpath(int node){
     }
 }
 int _cnt[2 * N];
-int * cnt = _cnt + 1 * N;
+int * cnt = _cnt + N;
 bool valid(int pos){
     return -N < pos && pos < N;
 }

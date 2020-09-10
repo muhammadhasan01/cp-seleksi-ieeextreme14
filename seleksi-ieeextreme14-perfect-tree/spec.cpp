@@ -4,7 +4,7 @@
 using namespace std;
 using namespace tcframe;
 
-const int NMax = 1e5;
+const int NMax = 2e5;
 
 class ProblemSpec : public BaseProblemSpec {
 protected:
@@ -23,8 +23,8 @@ protected:
     }
 
     void GradingConfig() {
-        TimeLimit(1);
-        MemoryLimit(512);
+        TimeLimit(3);
+        MemoryLimit(256);
     }
 
     void Constraints() {
@@ -46,7 +46,7 @@ private:
 
     bool noDoubleEdge(const vector<int> &u, const vector<int>& v) {
   		int len = u.size();
-  		set<int> st[NMax + 5];
+  		vector<set<int>> st(NMax + 5);
   		for (int i = 0; i < len; i++) {
   			if (st[u[i]].find(v[i]) != st[u[i]].end()) return false;
   			st[u[i]].insert(v[i]);
