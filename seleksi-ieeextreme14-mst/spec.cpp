@@ -26,7 +26,7 @@ protected:
     }
 
     void GradingConfig() {
-        TimeLimit(2);
+        TimeLimit(3);
         MemoryLimit(512);
     }
 
@@ -54,8 +54,9 @@ private:
   		int len = u.size();
   		set<int> st[NMax + 5];
   		for (int i = 0; i < len; i++) {
-  			if (st[u[i]].find(v[i]) != st[u[i]].end()) return false;
+  			if (st[u[i]].find(v[i]) != st[u[i]].end() && st[v[i]].find(u[i]) != st[v[i]].end()) return false;
   			st[u[i]].insert(v[i]);
+            st[v[i]].insert(u[i]);
   		}
   		return true;
     }
@@ -92,11 +93,11 @@ protected:
     }
 
     void TestCases() {
-    	CASE(N = 2, M = 2, randomConnectedGraph(N, M, U, V, W));
+    	CASE(N = 2, M = 1, randomConnectedGraph(N, M, U, V, W));
     	CASE(N = 5, M = 4, randomConnectedGraph(N, M, U, V, W));
     	CASE(N = 10, M = 9, randomConnectedGraph(N, M, U, V, W));
     	for (int i = 0; i < 2; i++) {
-    		CASE(N = rnd.nextInt(6, NMax / 2), M = rnd.nextInt(N - 1, MMax), randomConnectedGraph(N, M, U, V, W));
+    		CASE(N = rnd.nextInt(6, NMax / 2), M = rnd.nextInt(N - 1, min(NMax, maxx(N))), randomConnectedGraph(N, M, U, V, W));
     	}
     	for (int i = 0; i < 5; i++) {
     		CASE(N = rnd.nextInt(NMax / 2 + 1, NMax), M = rnd.nextInt(N - 1, MMax), randomConnectedGraph(N, M, U, V, W));
@@ -106,9 +107,9 @@ protected:
     		CASE(N = NMax, M = MMax, randomConnectedGraph(N, M, U, V, W));
     		CASE(N = NMax, M = MMax, randomConnectedGraph(N, M, U, V, W, rnd.nextInt(1000, 10000)));
     	}
-        for (int i = 0; i < 4; i++){
-    	    CASE(N = 400, M = maxx(N), completeGraph(N, M, U, V, W));
-    	    CASE(N = 400, M = maxx(N), completeGraph(N, M, U, V, W, rnd.nextInt(1000, 10000)));
+        for (int i = 0; i < 1; i++){
+    	    CASE(N = 400, M = min(maxx(N), MMax), randomConnectedGraph(N, M, U, V, W));
+    	    CASE(N = 400, M = min(maxx(N), MMax), randomConnectedGraph(N, M, U, V, W, rnd.nextInt(1000, 10000)));
         }
     }
 
@@ -164,6 +165,7 @@ private:
 		map<pair<int,int>, int> udah;
 		for (int i = 0; i < (int)u.size(); ++i){
 			udah[{u[i], v[i]}]++;
+            udah[{v[i], u[i]}]++;
 		}
     	while (u.size() < m) {
     		int newU = rnd.nextInt(1, n);
@@ -173,6 +175,7 @@ private:
 				newV = rnd.nextInt(1, n);
 			}
 			udah[{newU, newV}]++;
+			udah[{newV, newU}]++;
 			u.push_back(newU);
 			v.push_back(newV);
     	}
@@ -185,15 +188,12 @@ private:
     		for (int j = i+1; j < n; j++) {
     			u.push_back(i + 1);
     			v.push_back(j + 1);
-
-				u.push_back(j+1);
-				v.push_back(i+1);
     		}
     	}
         randomWeight(m, w, bates);
     }
 
 	int maxx(int n){
-		return (n*(n-1));
+		return (1LL * n * (n-1)) / 2;
 	}
 };

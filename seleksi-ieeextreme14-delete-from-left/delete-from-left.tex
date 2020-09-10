@@ -1,0 +1,94 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
+\geometry{ a4paper, total={170mm,257mm}, top=20mm, right=20mm, bottom=20mm, left=20mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{ITB - IEEEXtreme 14.0 Selection}
+\fancyfoot[CE,CO]{\thepage}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=2,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    prebreak={},
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    captionpos=t,
+    escapeinside={(\%}{\%)}
+}
+
+\begin{document}
+
+\begin{center}
+    \section*{A. Tuan Mor dan Dua Buah Kata}
+
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & 1s \\  
+        Batas Memori & 256MB \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+
+Tuan Mor diberi dua buah kata $A$ dan $B$. Ia dapat melakukan beberapa operasi pada kedua kata tersebut. Setiap operasi terdiri atas langkah-langkah berikut:
+
+\begin{itemize}
+    \setlength\itemsep{0pt}
+    \item Pilih salah satu dari kata $A$ atau $B$ yang tidak kosong (jumlah karakter pada kata yang dipilih tidak boleh bernilai nol)
+    \item Hapus karakter pertama dari kata yang dipilih tersebut.
+\end{itemize}
+
+Sebagai contoh, apabila $A = \text{saya}$ dan $b = \text{anda}$, maka pada operasi pertama Tuan Mor dapat membuat $(A,B)$ menjadi $(\text{aya}, \text{anda})$ atau $(\text{saya}, \text{nda})$.
+
+Tugas Tuan Mor adalah membuat kedua kata $A$ dan $B$ menjadi sama dengan melakukan sejumlah operasi tersebut seminimal mungkin. Kedua kata tersebut dapat menjadi kosong di akhir. Bantulah Tuan Mor untuk menentukan jumlah operasi minimal yang harus dilakukan.
+
+\subsection*{Format Masukan}
+
+Baris pertama dan kedua berisi kata $A$ dan $B$ secara berturut-turut ($1 \leq |A|, |B| \leq 200.000$). Kedua kata hanya terdiri atas \textit{lowercase alphabet}.  
+
+\subsection*{Format Keluaran}
+
+Sebuah bilangan yang merupakan jumlah operasi minimal yang dibutuhkan.
+\\
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan}
+\begin{lstlisting}
+saya
+anda
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran}
+\begin{lstlisting}
+6
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\subsection*{Penjelasan}
+Setelah enam langkah, Tuan Mor dapat mengubah kedua kata tersebut menjadi sebuah kata yang terdiri atas satu karakter 'a'.
+Dapat dibuktikan bahwa minimal dibutuhkan enam buah langkah pada kasus uji ini.
+
+\pagebreak
+
+\end{document}

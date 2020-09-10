@@ -1,0 +1,97 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
+\geometry{ a4paper, total={170mm,257mm}, top=20mm, right=20mm, bottom=20mm, left=20mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{ITB - IEEEXtreme 14.0 Selection}
+\fancyfoot[CE,CO]{\thepage}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=2,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    prebreak={},
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    captionpos=t,
+    escapeinside={(\%}{\%)}
+}
+
+\begin{document}
+
+\begin{center}
+    \section*{H. Menyusun Prajurit} % ganti judul soal
+
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & 2s \\    % jangan lupa ganti time limit
+        Batas Memori & 512MB \\  % jangan lupa ganti memory limit
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+
+Di kerajaan Ganesha, terdapat $N$ prajurit. Setiap prajurit memiliki besar skill \textit{Attack} dan besar skill \textit{Defense} masing-masing. Baru-baru ini, terjadi peperangan besar diantara kerajaan, oleh karena itu kerajaan Ganesha perlu membuat suatu susunan prajurit. Raja ingin terdapat tepat $X$ prajurit yang berfungsi untuk menyerang dan tepat $Y$ prajurit yang berfungsi untuk bertahan di kerajaan.
+
+Sudah menjadi peraturan umum bahwa kekuatan total dari suatu prajurit adalah penjumlahan dari dua nilai, yakni jumlah skill \textit{Attack} dari prajurit yang berfungsi untuk menyerang, dan jumlah skill \textit{Defense} dari prajurit yang berfungsi untuk bertahan.
+
+Raja ingin mengetahui kekuatan total maksimum dari susunan prajurit yang bisa didapatkan. Anda sebagai ahli strategi kerajaan Ganesha, diminta untuk mencarinya!
+
+\subsection*{Format Masukan}
+
+Baris pertama terdiri dari tiga bilangan bulat positif $N, X, Y$ ($1 \leq N \leq 3000, 0 \leq X, Y \leq N, X + Y \leq N$), secara berturut-turut menyatakan banyaknya prajurit yang ada di kerajaan Ganesha, banyaknya prajurit yang perlu berfungsi untuk menyerang, dan banyaknya prajurit yang perlu berfungsi untuk bertahan.
+
+$N$ baris berikutnya berisi dua bilangan bulat positif, dengan baris ke-$i$ berisi bilangan bulat positif $A_i, B_i$ ($1 \leq A_i, B_i \leq 10^5$), yang menyatakan besarnya skill \textit{Attack} dan besarnya skill \textit{Defense} dari prajurit ke-$i$.
+
+\subsection*{Format Keluaran}
+
+Tuliskan satu bilangan bulat positif menyatakan kekuatan total maksimum susunan prajurit yang bisa didapatkan.
+\\
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan}
+\begin{lstlisting}
+5 2 2
+1 5
+3 3
+4 2
+5 1
+2 4
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran}
+\begin{lstlisting}
+18
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\subsection*{Penjelasan}
+% Jika dibutuhkan, tambahkan penjelasan di sini
+
+Kekuatan total maksimum yang didapatkan adalah dengan menaruh prajurit 3, dan prajurit 4 untuk menyerang, lalu menaruh prajurit 1 dan prajurit 5 untuk bertahan. Sehingga didapat kekuatan total maksimumnya adalah:
+
+$$A_3+A_4+B_1+B_5=4+5+5+4=18$$
+
+\pagebreak
+
+\end{document}
