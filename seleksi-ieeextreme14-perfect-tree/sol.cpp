@@ -21,7 +21,7 @@ using namespace std;
 using ll = long long;
 using pii = pair<int, int>;
 
-const int N = 1e5 + 10;
+const int N = 2e5 + 10;
 const int INF = 1e9 + 10;
 
 int q;
@@ -30,24 +30,13 @@ vector<int> adj[N];
 int ar[N];
 int ans[N];
 
-int _ab[2 * N], _ba[2 * N];
-int * ab = _ab + N;
-int * ba = _ba + N;
-
 vector<int> tur;
 int tin[N], dep[N], timer;
 int pas[N];
 vector<pair<pii, int>> qu;
 
 void init(){
-    fill(ans, ans + n + 2, INF);
-    for (int i=1;i<=n;i++){
-        adj[i].clear();
-        pas[i] = 0;
-    }
-    timer = 0;
-    tur.clear();
-    qu.clear();
+    fill(ans, ans + N, INF);
 }
 
 
@@ -101,6 +90,9 @@ void getpath(int node){
 }
 int _cnt[2 * N];
 int * cnt = _cnt + N;
+bool valid(int pos){
+    return -N < pos && pos < N;
+}
 void solve_bf(int node){
     path.clear();
     getpath(node);
@@ -108,16 +100,19 @@ void solve_bf(int node){
     int len = path.size();
     int mx = 0;
     for (int i=0;i<len;i++){
+        assert(valid(ar[path[i]] - i));
         cnt[ar[path[i]] - i]++;
         mx = max(mx, cnt[ar[path[i]] - i]);
     }
     // clear
     for (int i=0;i<len;i++){
+        assert(valid(ar[path[i]] - i));
         cnt[ar[path[i]] - i] = 0;
     }
 
     int lefti = 0;
     for (int i=len - 1;i>=0;i--){
+        assert(valid(ar[path[i]] - lefti));
         cnt[ar[path[i]] - lefti]++;
         mx = max(mx, cnt[ar[path[i]] - lefti]);
         lefti++;
@@ -125,6 +120,7 @@ void solve_bf(int node){
     // clear
     lefti = 0;
     for (int i=len - 1;i>=0;i--){
+        assert(valid(ar[path[i]] - lefti));
         cnt[ar[path[i]] - lefti] = 0;
         lefti++;
     }
@@ -136,13 +132,15 @@ void solve(){
     init();
     for (int i=1;i<=n;i++){
         cin >> ar[i];
+        assert(ar[i] > 0);
     }
-    for (int i=2;i<=n;i++){
-        int pp;
-        cin >> pp;
+    for (int i=1;i<n;i++){
+        int a, b;
+        cin >> a >> b;
+        assert(a > 0 && b > 0);
 
-        adj[i].pb(pp);
-        adj[pp].pb(i);
+        adj[a].pb(b);
+        adj[b].pb(a);
     }
     bool dummy = 1;
     dfs_bisa(1, 1, dummy);
@@ -159,17 +157,20 @@ void solve(){
         int node = x.se;
         if (range.se == r){
             for (int i=range.fi;i<l;i++){
+                assert(valid(ar[tur[i]] - i));
                 cnt[ar[tur[i]] - i]++;
                 ada.pb(ar[tur[i]] - i);
                 mx = max(mx, cnt[ar[tur[i]] - i]);
             }
         } else{
             for (auto y : ada){
+                assert(valid(y));
                 cnt[y] = 0;
             }
             ada.clear();
             mx = 0;
             for (int i=range.fi;i<=range.se;i++){
+                assert(valid(ar[tur[i]] - i));
                 cnt[ar[tur[i]] - i]++;
                 ada.pb(ar[tur[i]] - i);
                 mx = max(mx, cnt[ar[tur[i]] - i]);
@@ -179,6 +180,7 @@ void solve(){
         ans[node] = range.se - range.fi + 1 - mx;
     }
     for (auto x : ada){
+        assert(valid(x));
         cnt[x] = 0;
     }
     ada.clear();
@@ -189,17 +191,20 @@ void solve(){
         int node = x.se;
         if (range.se == r){
             for (int i=range.fi;i<l;i++){
+                assert(valid(ar[tur[i]] - (n - i)));
                 cnt[ar[tur[i]] - (n - i)]++;
                 ada.pb(ar[tur[i]] - (n - i));
                 mx = max(mx, cnt[ar[tur[i]] - (n - i)]);
             }
         } else{
             for (auto y : ada){
+                assert(valid(y));
                 cnt[y] = 0;
             }
             ada.clear();
             mx = 0;
             for (int i=range.fi;i<=range.se;i++){
+                assert(valid(ar[tur[i]] - (n - i)));
                 cnt[ar[tur[i]] - (n - i)]++;
                 ada.pb(ar[tur[i]] - (n - i));
                 mx = max(mx, cnt[ar[tur[i]] - (n - i)]);
@@ -209,6 +214,7 @@ void solve(){
         ans[node] = min(ans[node], range.se - range.fi + 1 - mx);
     }
     for (auto x : ada){
+        assert(valid(x));
         cnt[x] = 0;
     }
     ada.clear();
@@ -222,9 +228,8 @@ int main () {
     cin.tie(0);
     cout.tie(0);
 
-    cin >> q;
+    q = 1;
     for (int i=1;i<=q;i++){
-        cout << "Case #" << i << ":\n";
         solve();
     }
 

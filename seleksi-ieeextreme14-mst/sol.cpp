@@ -5,7 +5,7 @@
 
 // problem source: https://csacademy.com/contest/ieeextreme-practice/task/bearcity-renting
 
-#pragma gcc optimize ("O2")
+#pragma gcc optimize ("O3")
 #pragma gcc optimize ("unroll-loops")
 
 #include <bits/stdc++.h>

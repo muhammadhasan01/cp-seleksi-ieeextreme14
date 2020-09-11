@@ -41,7 +41,7 @@
 
     \begin{tabular}{ | c c | }
         \hline
-        Batas Waktu  & 2s \\    % jangan lupa ganti time limit
+        Batas Waktu  & 3s \\    % jangan lupa ganti time limit
         Batas Memori & 512MB \\  % jangan lupa ganti memory limit
         \hline
     \end{tabular}
@@ -50,7 +50,7 @@
 \subsection*{Deskripsi}
 
 Di Negara INF sedang dibangun kota baru, yaitu Kota Z. Kota Z sudah memiliki rancangan berupa posisi landmark-landmark yang akan dibuat.
-Presiden dari Negara INF ingin menmbuat jalan agar seluruh landmark kota terhubung tetapi dengan total harga pembuatan jalan yang seminimum mungkin. Tetapi karena belum adanya kepastian jalan mana saja yang akan dibuat, kamu diminta untuk menentukan jalan mana saja yang bisa langung dimulai pembuatannya karena pasti akan dibuat juga pada akhirnya.
+Presiden dari Negara INF ingin menmbuat jalan agar seluruh landmark kota terhubung tetapi dengan total harga pembuatan jalan yang \textbf{seminimum} mungkin. Tetapi karena belum adanya kepastian jalan mana saja yang akan dibuat, kamu diminta untuk menentukan jalan mana saja yang bisa langung dimulai pembuatannya karena pasti akan dibuat juga pada akhirnya.
 
 Kamu akan diberikan data landmark dan jalan mana yang mungkin dibangun.
 Terdapat $N$ buah landmark dan $M$ buah jalan yang mungkin dibuat, masing-masing jalan ke-$i$ akan menghubungkan landmark $A_i$ dan landmark $B_i$ dengan biaya pembangungan $W_i$.
@@ -61,7 +61,7 @@ Baris pertama terdiri dari dua bilangan bulat positif $N$ ($2 \leq N \leq 10^5$)
 
 Baris kedua sampai $M + 1$ berisi tiga bilangan $A_i$ ($1 \leq A_i \leq N$), $B_i$ ($1 \leq B_i \leq N$), dan $W_i$ ($1 \leq W_i \leq 10^9$). dengan batasan $i$ ($1 \leq i \leq N$) yang menandakan jalan ke-berapa.
 
-Dijamin tidak ada kemungkinan jalan yang menghubungkan 2 landmark yang sama, sehingga untuk setiap pasangan $i$ dan $j$ ($i \neq j$) akan berlaku ($A_i \neq A_j$ atau $B_i \neq B_j$) dan ($A_i \neq B_j$ atau $B_i \neq A_j$).
+Dijamin tidak ada jalan yang menghubungkan sebuah landmark ke dirinya sendiri, dan dijamin juga tidak ada 2 buah jalan yang berbeda tetapi menghubungkan landmark yang sama. Sehingga untuk setiap pasangan $i$ dan $j$ ($i \neq j$) akan berlaku ($A_i \neq A_j$ atau $B_i \neq B_j$) dan ($A_i \neq B_j$ atau $B_i \neq A_j$).
 
 \subsection*{Format Keluaran}
 
@@ -88,8 +88,8 @@ Pada baris kedua sampai $X + 1$, keluarkan satu buah integer yang menunjukan nom
 \null
 \end{multicols}
 
-% \subsection*{Penjelasan}
-% Jika dibutuhkan, tambahkan penjelasan di sini
+\subsection*{Penjelasan}
+Pada contoh masukan, terdapat 2 kemungkinan himpunan jalan yang bisa dibangun dengan total biaya minimum, yaitu jalan \{1, 3\} atau jalan \{2, 3\}. Karena pada 2 kemungkinan tersebut terdapat jalan nomor 3, berarti dari awal sebelum ditentukan pembangunan sudah dapat dipastikan bahwa jalan nomor 3 akan dibuat juga pada akhirnya.
 
 \pagebreak
 

@@ -5,7 +5,7 @@
 
 // problem source: https://csacademy.com/contest/ieeextreme-practice/task/bearcity-renting
 
-#pragma gcc optimize ("O2")
+#pragma gcc optimize ("O3")
 #pragma gcc optimize ("unroll-loops")
 
 #include <bits/stdc++.h>
@@ -21,7 +21,7 @@ using namespace std;
 using ll = long long;
 using pii = pair<int, int>;
 
-const int N = 1e5 + 10, M = 1e4 + 10;
+const int N = 1e5 + 10, M = 2e5 + 10;
 const int INF = 1e9;
 
 int n, m;
