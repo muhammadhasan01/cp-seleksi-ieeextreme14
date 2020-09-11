@@ -1,0 +1,83 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
+\geometry{ a4paper, total={170mm,257mm}, top=20mm, right=20mm, bottom=20mm, left=20mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{ITB - IEEEXtreme 14.0 Selection}
+\fancyfoot[CE,CO]{\thepage}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=2,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    prebreak={},
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    captionpos=t,
+    escapeinside={(\%}{\%)}
+}
+
+\begin{document}
+
+\begin{center}
+    \section*{Sepuluh Permen}
+
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
+        Batas Memori & 256MB \\  % jangan lupa ganti memory limit
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+Di saat pandemi seperi sekarang, Pak Wengki mencoba peruntungan baru dengan membuat bisnis jualan permen. Untuk menarik perhatian pembeli, di awal perintisan bisnisnya ini, Pak Wengki memberikan kesempatan kepada pembelinya untuk menukar 10 bungkus sisa permen yang telah dibeli dengan 1 buah permen yang baru. 
+
+Jono yang tertarik membeli permen dari Pak Wengki kemudian berpikir jika dia ingin membeli $N$ buah permen, berapa banyak permen maksimum yang sebenarnya bisa ia dapatkan?
+
+\subsection*{Format Masukan}
+
+Masukan hanya terdiri 1 baris, yaitu bilangan $N$ ($1 \leq 10^{18} \leq N$) yang merupakan jumlah permen awal yang ingin dibeli oleh Jono.
+
+\subsection*{Format Keluaran}
+
+Sebuah bilangan yang menyatakan banyaknya permen maksimal yang bisa didapatkan oleh Jono.
+\\
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan}
+\begin{lstlisting}
+100
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran}
+\begin{lstlisting}
+111
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+% \subsection*{Penjelasan}
+% Jika dibutuhkan, tambahkan penjelasan di sini
+
+\pagebreak
+
+\end{document}
