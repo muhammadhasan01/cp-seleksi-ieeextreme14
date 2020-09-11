@@ -63,10 +63,10 @@ private:
     }
     
 protected:
-	/**
+	
     void SampleTestCase1() {
         Input({
-            "mengapa"
+            "mengapa",
             "kenapa"
         });
         Output({
@@ -76,14 +76,13 @@ protected:
     
     void SampleTestCase2() {
         Input({
-            "wkwkwkkwk"
+            "wkwkwkkwk",
             "wwkwkwk"
         });
         Output({
             "10"
         });
     }
-    **/
 
     void TestCases() {
         CASE(S = "test", T = "west");
