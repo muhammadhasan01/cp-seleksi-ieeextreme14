@@ -1,0 +1,107 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
+\geometry{ a4paper, total={170mm,257mm}, top=20mm, right=20mm, bottom=20mm, left=20mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{ITB - IEEEXtreme 14.0 Selection}
+\fancyfoot[CE,CO]{\thepage}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=2,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    prebreak={},
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    captionpos=t,
+    escapeinside={(\%}{\%)}
+}
+
+\begin{document}
+
+\begin{center}
+    \section*{J. Alternating Pot}
+
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & 1s \\  
+        Batas Memori & 256MB \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+
+Tuan Fan gemar mengoleksi tanaman.
+Di rumahnya, ia memiliki $N$ buah pot yang tersusun sejajar, dimana terdapat pot yang terisi tanaman maupun yang masih kosong.
+Karena ia sedang bosan, maka ia ingin membuat susunan pot tersebut menjadi sebuah susunan yang indah.
+Didefinisikan susunan pot yang indah adalah susunan pot dimana:
+
+\begin{itemize}
+    \setlength\itemsep{0pt}
+    \item Banyak pot di antara 2 buah pembatas adalah maksimal $K$.
+    \item Pot di antara 2 buah pembatas bukan merupakan \textit{alternating pot}
+\end{itemize}
+
+Pot-pot di antara 2 buah pembatas didefinisikan sebagai \textit{alternating pot} jika untuk setiap $i$ berlaku salah satu dari $i$ dan $i+1$ memiliki tanaman namun tidak keduanya.
+
+Jika di antara 2 buah pembatas hanya terdapat 1 buah pot, maka ia tidak dihitung sebagai \textit{alternating pot}.
+
+Pada awalnya, hanya terdapat 2 buah pembatas, yaitu pada ujung-ujung dari pot tersebut.
+Tuan Fan dapat menambahkan pembatas di antara dua buah pot.
+Bantu Tuan Fan mencari tahu berapa minimal pembatas yang harus ditambahkan!
+
+\subsection*{Format Masukan}
+
+Baris pertama berisi $T$ ($1 \leq T \leq 50$) yang menandakan banyaknya testcase.
+Untuk setiap testcase, terdapat 2 baris, dimana baris pertama adalah $N$ dan $K$ ($1 \leq K \leq N \leq 1.000$) dengan $N$ adalah banyak dari pot dan K adalah banyak pot maksimal yang dapat diapit oleh 2 pembatas.
+Baris kedua adalah sebuah string dengan panjang $N$ yang menandakan pot-pot yang ada, dimana $1$ menandakan bahwa pot tersebut terisi tanaman dan $0$ menandakan bahwa pot tersebut kosong.
+
+\subsection*{Format Keluaran}
+
+Untuk setiap testcase, keluarkan minimal pembatas yang dibutuhkan agar susunan pot yang ada menjadi indah.
+\\
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan}
+\begin{lstlisting}
+2
+5 2
+11010
+3 3
+110
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran}
+\begin{lstlisting}
+3
+0
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\subsection*{Penjelasan}
+Untuk testcase pertama, Tuan Fan harus menaruh pembatas pada seluruh tempat selain pada jeda antara pot ke-1 dan ke-2.
+Untuk testcase kedua, Tuan Fan tidak perlu menaruh pembatas karena susunan pot tersebut sudah merupakan susunan pot yang indah.
+
+\pagebreak
+
+\end{document}
