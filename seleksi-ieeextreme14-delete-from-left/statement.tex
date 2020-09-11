@@ -37,7 +37,7 @@
 \begin{document}
 
 \begin{center}
-    \section*{Tuan Mor dan Dua Buah Kata}
+    \section*{A. Tuan Mor dan Dua Buah Kata}
 
     \begin{tabular}{ | c c | }
         \hline
@@ -63,7 +63,7 @@ Tugas Tuan Mor adalah membuat kedua kata $A$ dan $B$ menjadi sama dengan melakuk
 
 \subsection*{Format Masukan}
 
-Baris pertama dan kedua berisi kata $A$ dan $B$ secara berturut-turut ($1 \leq |A|, |B| \leq 200.000$). Kedua kata hanya terdiri atas \textit{lowercase alphabet}.  
+Baris pertama dan kedua berisi kata $A$ dan $B$ secara berturut-turut ($1 \leq |A|, |B| \leq 200.000$). Kedua kata dijamin hanya terdiri atas \textit{lowercase alphabet}.  
 
 \subsection*{Format Keluaran}
 
@@ -71,23 +71,38 @@ Sebuah bilangan yang merupakan jumlah operasi minimal yang dibutuhkan.
 \\
 
 \begin{multicols}{2}
-\subsection*{Contoh Masukan}
+\subsection*{Contoh Masukan 1}
 \begin{lstlisting}
-saya
-anda
+mengapa
+kenapa
 \end{lstlisting}
 \columnbreak
-\subsection*{Contoh Keluaran}
+\subsection*{Contoh Keluaran 1}
 \begin{lstlisting}
-6
+7
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan 2}
+\begin{lstlisting}
+wkwkwkkwk
+wwkwkwk
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran 2}
+\begin{lstlisting}
+10
 \end{lstlisting}
 \vfill
 \null
 \end{multicols}
 
 \subsection*{Penjelasan}
-Setelah enam langkah, Tuan Mor dapat mengubah kedua kata tersebut menjadi sebuah kata yang terdiri atas satu karakter 'a'.
-Dapat dibuktikan bahwa minimal dibutuhkan enam buah langkah pada kasus uji ini.
+Pada contoh masukan 1, setelah tujuh langkah, Tuan Mor dapat mengubah kedua kata tersebut menjadi kata 'napa'.
+Dapat dibuktikan bahwa minimal dibutuhkan tujuh buah langkah pada kasus uji ini.
 
 \pagebreak
 
