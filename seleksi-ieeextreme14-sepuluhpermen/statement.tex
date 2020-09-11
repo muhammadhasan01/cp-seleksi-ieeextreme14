@@ -37,63 +37,39 @@
 \begin{document}
 
 \begin{center}
-    \section*{Z. Menghitung Perkalian Faktor-Faktor}
+    \section*{Sepuluh Permen}
 
     \begin{tabular}{ | c c | }
         \hline
-        Batas Waktu  & 2s \\    % jangan lupa ganti time limit
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
         Batas Memori & 256MB \\  % jangan lupa ganti memory limit
         \hline
     \end{tabular}
 \end{center}
 
 \subsection*{Deskripsi}
+Di saat pandemi seperi sekarang, Pak Wengki mencoba peruntungan baru dengan membuat bisnis jualan permen. Untuk menarik perhatian pembeli, di awal perintisan bisnisnya ini, Pak Wengki memberikan kesempatan kepada pembelinya untuk menukar 10 bungkus sisa permen yang telah dibeli dengan 1 buah permen yang baru. 
 
-Contoh memformat teks: \textbf{bold}, \textit{italic}, \underline{underline}, $x$.
-
-Contoh membuat persamaan:
-
-\[ x_{n+1} = x_{n} - \frac{f(x_{n})}{f'(x_{n})} \]
-
-\begin{enumerate}
-    \setlength\itemsep{0pt}
-    \item Contoh penomoran.
-    \item Contoh penomoran.
-\end{enumerate}
-
-\begin{itemize}
-    \setlength\itemsep{0pt}
-    \item Contoh membuat poin-poin.
-    \item Contoh membuat poin-poin.
-\end{itemize}
-
-\begin{center}
-    Teks rata tengah
-    % Contoh gambar:
-    % \includegraphics[width=300px]{image-1}
-\end{center}
+Jono yang tertarik membeli permen dari Pak Wengki kemudian berpikir jika dia ingin membeli $N$ buah permen, berapa banyak permen maksimum yang sebenarnya bisa ia dapatkan?
 
 \subsection*{Format Masukan}
 
-Baris pertama terdiri dari satu bilangan bulat positif $N$ ($1 \leq N \leq 200.000$), menyatakan banyaknya faktor prima dari bilangan $X$.
-Baris berikutnya berisi $N$ buah bilangan $p_1$, $p_2$, $\dots$, $p_N$ ($1 \leq p_i \leq 200.000$) yang merupakan faktor-faktor prima dari $X$. Dijamin tiap $p_i$ merupakan bilangan prima.
-$N$ baris berikutnya terdiri dari 3 bilangan, dengan baris ke-$i$ menyatakan bilangan $A_i$, $B_i$, dan $C_i$.
+Masukan hanya terdiri 1 baris, yaitu bilangan $N$ ($1 \leq 10^{18} \leq N$) yang merupakan jumlah permen awal yang ingin dibeli oleh Jono.
 
 \subsection*{Format Keluaran}
 
-Tuliskan sebuah bilangan yang merupakan bilangan yang diinginkan dalam modulo $10^9 + 7$.
+Sebuah bilangan yang menyatakan banyaknya permen maksimal yang bisa didapatkan oleh Jono.
 \\
 
 \begin{multicols}{2}
 \subsection*{Contoh Masukan}
 \begin{lstlisting}
-3
-5 2 2
+100
 \end{lstlisting}
 \columnbreak
 \subsection*{Contoh Keluaran}
 \begin{lstlisting}
--6
+111
 \end{lstlisting}
 \vfill
 \null
