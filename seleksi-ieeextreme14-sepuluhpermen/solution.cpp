@@ -14,10 +14,12 @@ int main() {
     ios_base::sync_with_stdio(0); cin.tie(0);
     
     cin >> permen;
+ 
+    long long ans = permen;
 
-    while (permen > 0) {
-        ans += permen;
-        permen /= 10;
+    while (permen >= 10) {
+        ans += permen / 10;
+        permen = permen / 10 + permen % 10;
     }
 
     cout << ans << '\n';
